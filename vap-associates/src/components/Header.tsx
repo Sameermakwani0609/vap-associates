@@ -71,7 +71,7 @@ export default function Header() {
   return (
     <header id="hd" className={scrolled ? "scrolled" : undefined}>
       <div className="topstrip">
-        <div className="wrap">
+        <div className="wrap"> 
           <span>ICAI Firm Reg. No. 138722W</span>
           <span>Amravati &nbsp;·&nbsp; Nagpur &nbsp;·&nbsp; Raipur</span>
           <span>
