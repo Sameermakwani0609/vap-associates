@@ -104,7 +104,7 @@ export default function Header() {
           </span>
         </div>
       </div>
-      <div className="wrap bar">
+      <div className="wrap header-bar">
         <Logo />
         <div className="header-actions">
           <button
