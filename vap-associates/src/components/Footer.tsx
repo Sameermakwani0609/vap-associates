@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
           <div>
             <h4>Connect with us</h4>
-            <a href={MAIL_URL} target="_blank" rel="noopener noreferrer">{EMAIL}</a>
+            <a href={MAIL_URL} target="_blank" rel="noopener noreferrer" translate="no">{EMAIL}</a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{PHONE_DISPLAY}</a>
             <span>Amravati &nbsp;·&nbsp; Raipur &nbsp;·&nbsp; Nagpur</span>
           </div>

@@ -37,7 +37,7 @@ export default function Contact() {
             </a>
             <a href={MAIL_URL} target="_blank" rel="noopener noreferrer">
               <small>Email</small>
-              <b>{EMAIL}</b>
+              <b translate="no">{EMAIL}</b>
             </a>
           </div>
           <div className="of">

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 const REVEAL = ".news,.d,.entry,.step,.art,.contact,h2,.ms,.off,.pp,.gc,.post,.tm";
+const SCROLL_FOCUS = ".news,.d,.art,.contact,.off,.pp,.gc,.tm";
 
 /** Scroll-reveal animation + #hash routing for the blog-post view. Renders nothing. */
 export default function PageEffects() {
@@ -13,13 +14,20 @@ export default function PageEffects() {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
+          const scrollFocus = e.target.matches(SCROLL_FOCUS);
+          if (e.isIntersecting && e.intersectionRatio >= 0.12) {
             e.target.classList.add("in");
-            io.unobserve(e.target);
+            if (scrollFocus) {
+              e.target.classList.toggle("focus", e.intersectionRatio >= 0.5);
+            } else {
+              io.unobserve(e.target);
+            }
+          } else if (scrollFocus) {
+            e.target.classList.remove("focus");
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: [0, 0.12, 0.5] }
     );
 
     const observe = () => {
